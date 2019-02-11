@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №5</title>
+</head>
+<body>
+    <script>
+    
+        // Аналог заданию №4, только с применением switch case и описание функции mathOperation
+        
+        // Задаём глобальные переменные - chislo_1 и chislo_2. Это те числа, с которыми будут проводиться арифметические операции
+        // Пусть в этом случае эти числа будет вводить пользователь сам
+        // Если я правильно понял, то числа тоже должны быть целыми. Поэтому их тип данных из строки будет переводиться в целое число
+        // с помощью parseInt()
+        
+        var chislo_1 = parseInt(prompt("Пожалуйста, введите первое число"));
+        var chislo_2 = parseInt(prompt("Пожалуйста, введите второе число"));
+        
+        // также зададим переменную operator. Пользователь будет вводить знак математической операции
+        
+        var operator = prompt(`Что делаем с числами ${chislo_1} и ${chislo_2} ? Укажите знак математической функции`);
+        
+        // Пишем функцию сложения
+        
+        function plusuem (chislo_1, chislo_2) {
+        
+            return (chislo_1 + chislo_2);
+        }
+        
+        
+        var result = plusuem(chislo_1, chislo_2);
+        
+        // Пишем функцию вычитания
+        
+        function minusuem (chislo_1, chislo_2) {
+        
+            return (chislo_1 - chislo_2);
+        }
+        
+        result = minusuem(chislo_1, chislo_2);
+        
+        // Пишем функцию умножения
+        
+        function umnozhaem (chislo_1, chislo_2) {
+        
+            return (chislo_1 * chislo_2);
+        }
+        
+        result = umnozhaem(chislo_1, chislo_2);
+        
+        // Пишем функцию деления
+        
+        function delim (chislo_1, chislo_2) {
+        
+            return (chislo_1 / chislo_2);
+        }
+        
+        result = delim(chislo_1, chislo_2);
+  
+        // Приступим к описанию функции mathOperation
+        
+        function mathOperation(chislo_1, chislo_2, operator) {
+            let res;
+            switch (operator) {
+            case '+':
+               res = plusuem(chislo_1, chislo_2);
+               break;
+           case '-':
+                res = minusuem(chislo_1, chislo_2);
+                break;
+           case '*':
+                res = umnozhaem(chislo_1, chislo_2);
+                break;
+           case '/':
+                res = delim(chislo_1, chislo_2);
+ }
+            return res;
+            console.log(res);
+}
+
+        res = mathOperation(chislo_1, chislo_2, operator);
+        console.log(res);
+
+        
+    </script>
+</body>
+</html>
